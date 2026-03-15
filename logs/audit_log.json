@@ -1,0 +1,387 @@
+{
+    "scan_time": "2026-03-11 22:20:12",
+    "target": {
+        "domain": "google.com",
+        "repository": "notebooks"
+    },
+    "risk_score": 55,
+    "tls_analysis": {
+        "tls_version": "TLS 1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange": "X25519",
+        "signature": "ECDSA-SHA256",
+        "quantum_safe": false
+    },
+    "api_analysis": {
+        "domain": "https://critical-hitters-ai-seller-dashboard.netlify.app/",
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange": "Unknown",
+        "signature": "Unknown",
+        "quantum_safe": false,
+        "status_code": 200,
+        "error": null
+    },
+    "dependency_scan": "",
+    "crypto_scan": "\n\u001b[36m\u001b[1m  \u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n  \u2551                                                                 \u2551\n  \u2551    \u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557   \u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557            \u2551\n  \u2551   \u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u255a\u2588\u2588\u2557 \u2588\u2588\u2554\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u255a\u2550\u2550\u2588\u2588\u2554\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557           \u2551\n  \u2551   \u2588\u2588\u2551     \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d \u255a\u2588\u2588\u2588\u2588\u2554\u255d \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d   \u2588\u2588\u2551   \u2588\u2588\u2551   \u2588\u2588\u2551           \u2551\n  \u2551   \u2588\u2588\u2551     \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557  \u255a\u2588\u2588\u2554\u255d  \u2588\u2588\u2554\u2550\u2550\u2550\u255d    \u2588\u2588\u2551   \u2588\u2588\u2551   \u2588\u2588\u2551           \u2551\n  \u2551   \u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551  \u2588\u2588\u2551   \u2588\u2588\u2551   \u2588\u2588\u2551        \u2588\u2588\u2551   \u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d           \u2551\n  \u2551    \u255a\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u255d   \u255a\u2550\u255d   \u255a\u2550\u255d        \u255a\u2550\u255d    \u255a\u2550\u2550\u2550\u2550\u2550\u255d            \u2551\n  \u2551                                                                 \u2551\n  \u2551    \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2557   \u2588\u2588\u2557                           \u2551\n  \u2551    \u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551                           \u2551\n  \u2551    \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551     \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2554\u2588\u2588\u2557 \u2588\u2588\u2551                           \u2551\n  \u2551    \u255a\u2550\u2550\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2551\u255a\u2588\u2588\u2557\u2588\u2588\u2551                           \u2551\n  \u2551    \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551 \u255a\u2588\u2588\u2588\u2588\u2551                           \u2551\n  \u2551    \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u2550\u2550\u255d                           \u2551\n  \u2551                                                                 \u2551\n  \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u001b[0m\n\n\u001b[34m  Crypto Scan \u2014 QRAMM Cryptographic Discovery\u001b[0m\n\u001b[2m  Quantum Readiness Assurance & Migration Tool\u001b[0m\n\n\u001b[32m  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502\u001b[0m\u001b[1m  CSNP Mission:\u001b[0m\u001b[32m                                               \u2502\n  \u2502\u001b[0m  Advancing cybersecurity through education, research, and    \u001b[32m\u2502\n  \u2502\u001b[0m  open-source tools that empower organizations worldwide.     \u001b[32m\u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u001b[0m\n\n\u001b[2m  https://qramm.org  \u2022  https://csnp.org  \u2022  Apache-2.0 License\u001b[0m\n\n\u001b[36m\u001b[1m  \u23f3 Scanning...\u001b[0m \u001b[2m(findings appear as discovered)\u001b[0m\n\n\n\u001b[K\n\u001b[32m\u001b[1m  \u2713 Scan complete\u001b[0m \u2014 0 findings in 3 files (346ms)\n\n\n\u001b[1m\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u001b[0m\u001b[1m\u2551              CRYPTOGRAPHIC SCAN RESULTS                       \u2551\n\u001b[0m\u001b[1m\u2551                    QRAMM CryptoScan                           \u2551\n\u001b[0m\u001b[1m\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\n\u001b[0m\n\u001b[1m\u001b[36m\u250c\u2500 QUANTUM MIGRATION READINESS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[1m  Score: \u001b[31m\u001b[0m\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591 0.0% \u001b[0m\u001b[31m\u001b[1m[CRITICAL]\u001b[0m\u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[36m\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u001b[0m\u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[1m  INVENTORY                                                     \u001b[0m\u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m    \u001b[32m\u2713\u001b[0m Safe (PQC):        0        \u001b[31m\u2717\u001b[0m Vulnerable:    0    \u001b[36m   \u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m    \u001b[32m\u25d0\u001b[0m Hybrid:            0        \u001b[31m\u001b[1m\u26a0\u001b[0m Critical:      0    \u001b[36m   \u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m    \u001b[33m\u25d1\u001b[0m Partial:           0        Total:          0    \u001b[36m   \u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[36m\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u001b[0m\u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[1m  QRAMM DIMENSION 1: Cryptographic Visibility & Inventory (CVI) \u001b[0m\u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m    Practice 1.1 Discovery:   Level 1/5 \u001b[31m\u25cf\u001b[0m\u25cb\u25cb\u25cb\u25cb\u001b[36m                    \u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m    Practice 1.2 Assessment:  Level 1/5 \u001b[31m\u25cf\u001b[0m\u25cb\u25cb\u25cb\u25cb\u001b[36m                    \u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m    Practice 1.3 Mapping:     Level 1/5 \u001b[31m\u25cf\u001b[0m\u25cb\u25cb\u25cb\u25cb\u001b[36m                    \u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[36m\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u001b[0m\u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[1m\u001b[32m  RECOMMENDATIONS                                               \u001b[0m\u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m    \u2022 No cryptographic assets discovered. Run scan on additiona...\u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m    \u2022 Consider scanning dependencies (package.json, go.mod, req...\u001b[36m\u2502\n\u001b[0m\u001b[1m\u001b[36m\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u001b[0m\n\u001b[36m\u250c\u2500 Scan Information \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[1m Target:   \u001b[0mnotebooks                                           \u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[1m Time:     \u001b[0m2026-03-11 22:20:11                                 \u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[1m Duration: \u001b[0m346ms                                               \u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[1m Scanned:  \u001b[0m3 files \u2022 237 lines \u2022 14.11 MB                      \u001b[36m\u2502\n\u001b[0m\u001b[36m\u2502\u001b[0m\u001b[1m Speed:    \u001b[0m9 files/sec \u2022 40.8 MB/sec                           \u001b[36m\u2502\n\u001b[0m\u001b[36m\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u001b[0m\n\u001b[1m\u250c\u2500 Summary \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u001b[0m\u001b[1m\u2502  Total Findings: 0                                              \u2502\n\u001b[0m\u001b[1m\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u001b[0m\n\u001b[1m  Severity Breakdown:\n\u001b[0m\n\u001b[1m  Quantum Risk Assessment:\n\u001b[0m\n\u001b[1m  Categories Found:\n\u001b[0m\n\u001b[32m  \u2713 No cryptographic findings detected\n\u001b[0m\n\u001b[1m\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\u001b[0m\u001b[36m  QRAMM CryptoScan\u001b[0m - Quantum Readiness Assessment Tool\n  Part of the QRAMM Toolkit: https://qramm.org\n  Developed by CSNP: https://csnp.org\n\n\u001b[32m  CSNP Mission: \u001b[0mAdvancing cybersecurity through education,\n  research, and open-source tools that empower organizations.\n\u001b[1m\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\u001b[0m\n",
+    "pqc_recommendation": "+------------------------- PQC-Bench Recommendation --------------------------+\n| ML-KEM-1024  (FIPS 203)                                                     |\n|                                                                             |\n| Security     NIST Level 5 (256-bit)                                         |\n| Ciphertext   1,568 bytes                                                    |\n| Public Key   1,568 bytes                                                    |\n|                                                                             |\n| ",
+    "quantum_label": "NOT QUANTUM SAFE"
+}
+
+{
+    "scan_time": "2026-03-12 09:47:20",
+    "target": {
+        "domain": "google.com",
+        "repository": "notebooks"
+    },
+    "risk_score": 55,
+    "tls_analysis": {
+        "tls_version": "TLS 1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange": "X25519",
+        "signature": "ECDSA-SHA256",
+        "quantum_safe": false
+    },
+    "api_analysis": {
+        "domain": "https://ai-marketplace-backend-e3en.onrender.com",
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "Unknown",
+        "signature": "Unknown",
+        "quantum_safe": false,
+        "status_code": "Request failed",
+        "error": null
+    },
+    "dependency_scan": "",
+    "crypto_scan": "\u2551                                                                 \u2551\n\u2551                                                                 \u2551\n\u2551                                                                 \u2551\nCrypto Scan \u2014 QRAMM Cryptographic Discovery\nQuantum Readiness Assurance & Migration Tool\nhttps://qramm.org  \u2022  https://csnp.org  \u2022  Apache-2.0 License\n\u23f3 Scanning... (findings appear as discovered)\n\u2713 Scan complete \u2014 0 findings in 3 files (304ms)\n\u2551              CRYPTOGRAPHIC SCAN RESULTS                       \u2551\n\u2551                    QRAMM CryptoScan                           \u2551\nSeverity Breakdown:\nQuantum Risk Assessment:\nCategories Found:\n\u2713 No cryptographic findings detected\nQRAMM CryptoScan - Quantum Readiness Assessment Tool\nPart of the QRAMM Toolkit: https://qramm.org\nDeveloped by CSNP: https://csnp.org\nCSNP Mission: Advancing cybersecurity through education,\nresearch, and open-source tools that empower organizations.",
+    "pqc_recommendation": "+------------------------- PQC-Bench Recommendation --------------------------+\n| ML-KEM-1024  (FIPS 203)                                                     |\n|                                                                             |\n| Security     NIST Level 5 (256-bit)                                         |\n| Ciphertext   1,568 bytes                                                    |\n| Public Key   1,568 bytes                                                    |\n|                                                                             |\n| ",
+    "quantum_label": "NOT QUANTUM SAFE"
+}
+
+{
+    "scan_time": "2026-03-12 09:50:35",
+    "target": {
+        "domain": "google.com",
+        "repository": "notebooks"
+    },
+    "risk_score": 55,
+    "tls_analysis": {
+        "tls_version": "TLS 1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange": "X25519",
+        "signature": "ECDSA-SHA256",
+        "quantum_safe": false
+    },
+    "api_analysis": {
+        "domain": "https://ai-marketplace-backend-e3en.onrender.com",
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "Unknown",
+        "signature": "Unknown",
+        "quantum_safe": false,
+        "status_code": 200,
+        "error": null
+    },
+    "dependency_scan": "",
+    "crypto_scan": "Crypto Scan \u2014 QRAMM Cryptographic Discovery\nQuantum Readiness Assurance & Migration Tool\nhttps://qramm.org  \u2022  https://csnp.org  \u2022  Apache-2.0 License\n\u23f3 Scanning... (findings appear as discovered)\n\u2713 Scan complete \u2014 0 findings in 3 files (315ms)\nSeverity Breakdown:\nQuantum Risk Assessment:\nCategories Found:\n\u2713 No cryptographic findings detected\nQRAMM CryptoScan - Quantum Readiness Assessment Tool\nPart of the QRAMM Toolkit: https://qramm.org\nDeveloped by CSNP: https://csnp.org\nCSNP Mission: Advancing cybersecurity through education,\nresearch, and open-source tools that empower organizations.",
+    "pqc_recommendation": "+------------------------- PQC-Bench Recommendation --------------------------+\n| ML-KEM-1024  (FIPS 203)                                                     |\n|                                                                             |\n| Security     NIST Level 5 (256-bit)                                         |\n| Ciphertext   1,568 bytes                                                    |\n| Public Key   1,568 bytes                                                    |\n|                                                                             |\n| ",
+    "quantum_label": "NOT QUANTUM SAFE"
+}
+
+{
+    "scan_time": "2026-03-15 19:24:06",
+    "target": {
+        "domain": "google.com",
+        "repository": ""
+    },
+    "risk_score": 0,
+    "tls_analysis": {
+        "tls_version": "SCAN FAILED",
+        "cipher": "SCAN FAILED",
+        "key_exchange": "SCAN FAILED",
+        "signature": "SCAN FAILED",
+        "quantum_safe": false
+    },
+    "api_analysis": null,
+    "dependency_scan": "DEPENDENCY SCAN FAILED",
+    "crypto_scan": "CRYPTO SCAN FAILED",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 20:21:23",
+    "target": {
+        "domain": "google.com",
+        "repository": "repo"
+    },
+    "risk_score": 0,
+    "tls_analysis": {
+        "tls_version": "SCAN FAILED",
+        "cipher": "SCAN FAILED",
+        "key_exchange": "SCAN FAILED",
+        "signature": "SCAN FAILED",
+        "quantum_safe": false
+    },
+    "api_analysis": {
+        "domain": "https://api.example.com",
+        "tls_version": null,
+        "cipher": null,
+        "key_exchange": "Unknown",
+        "signature": "Unknown",
+        "quantum_safe": false,
+        "status_code": null,
+        "error": "[Errno 8] nodename nor servname provided, or not known"
+    },
+    "dependency_scan": "DEPENDENCY SCAN FAILED",
+    "crypto_scan": "CRYPTO SCAN FAILED",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 20:24:26",
+    "target": {
+        "domain": "google.com",
+        "repository": "browser"
+    },
+    "risk_score": 0,
+    "tls_analysis": {
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "NOT DETECTED",
+        "signature": "NOT DETECTED",
+        "quantum_safe": false
+    },
+    "api_analysis": {
+        "domain": "https://www.google.com",
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "Unknown",
+        "signature": "Unknown",
+        "quantum_safe": false,
+        "status_code": 200,
+        "error": null
+    },
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 37 code files. Findings:\n\u2022 DES/3DES encryption detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 20:30:12",
+    "target": {
+        "domain": "google.com",
+        "repository": "browser"
+    },
+    "risk_score": 0,
+    "tls_analysis": {
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "NOT DETECTED",
+        "signature": "NOT DETECTED",
+        "quantum_safe": false
+    },
+    "api_analysis": {
+        "domain": "https://www.google.com",
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "Unknown",
+        "signature": "Unknown",
+        "quantum_safe": false,
+        "status_code": 200,
+        "error": null
+    },
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 37 code files. Findings:\n\u2022 DES/3DES encryption detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 20:45:07",
+    "target": {
+        "domain": "google.com",
+        "repository": "browser"
+    },
+    "risk_score": 0,
+    "tls_analysis": {
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "NOT DETECTED",
+        "signature": "NOT DETECTED",
+        "quantum_safe": false
+    },
+    "api_analysis": {
+        "domain": "https://www.google.com",
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "Unknown",
+        "signature": "Unknown",
+        "quantum_safe": false,
+        "status_code": 200,
+        "error": null
+    },
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 37 code files. Findings:\n\u2022 DES/3DES encryption detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 20:55:20",
+    "target": {
+        "domain": "yahoo.com",
+        "repository": "/Users/rohit/Downloads/code"
+    },
+    "risk_score": 40,
+    "tls_analysis": {
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange": "NOT DETECTED",
+        "signature": "NOT DETECTED",
+        "quantum_safe": false
+    },
+    "api_analysis": {
+        "domain": "https://google.com",
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "Unknown",
+        "signature": "Unknown",
+        "quantum_safe": false,
+        "status_code": 200,
+        "error": null
+    },
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 23 code files. Findings:\n\u2022 RSA encryption detected\n\u2022 DES/3DES encryption detected\n\u2022 ECDSA signature detected\n\u2022 X25519 key exchange detected\n\u2022 AES encryption detected\n\u2022 SHA hash function detected\n\u2022 Crypto library usage detected\n\u2022 MD5 hash (weak!) detected\n\u2022 ChaCha20 encryption detected\n\u2022 Curve25519 detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 20:56:13",
+    "target": {
+        "domain": "google.com",
+        "repository": "/Users/rohit/Downloads/code"
+    },
+    "risk_score": 40,
+    "tls_analysis": {
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "NOT DETECTED",
+        "signature": "NOT DETECTED",
+        "quantum_safe": false
+    },
+    "api_analysis": null,
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 23 code files. Findings:\n\u2022 RSA encryption detected\n\u2022 DES/3DES encryption detected\n\u2022 ECDSA signature detected\n\u2022 X25519 key exchange detected\n\u2022 AES encryption detected\n\u2022 SHA hash function detected\n\u2022 Crypto library usage detected\n\u2022 MD5 hash (weak!) detected\n\u2022 ChaCha20 encryption detected\n\u2022 Curve25519 detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 20:56:23",
+    "target": {
+        "domain": "google.com",
+        "repository": "/Users/rohit/Downloads/code"
+    },
+    "risk_score": 40,
+    "tls_analysis": {
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "NOT DETECTED",
+        "signature": "NOT DETECTED",
+        "quantum_safe": false
+    },
+    "api_analysis": null,
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 23 code files. Findings:\n\u2022 RSA encryption detected\n\u2022 DES/3DES encryption detected\n\u2022 ECDSA signature detected\n\u2022 X25519 key exchange detected\n\u2022 AES encryption detected\n\u2022 SHA hash function detected\n\u2022 Crypto library usage detected\n\u2022 MD5 hash (weak!) detected\n\u2022 ChaCha20 encryption detected\n\u2022 Curve25519 detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 21:02:36",
+    "target": {
+        "domain": "google.com",
+        "repository": "/Users/rohit/Downloads/code"
+    },
+    "risk_score": 40,
+    "tls_analysis": {
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "NOT DETECTED",
+        "signature": "NOT DETECTED",
+        "quantum_safe": false
+    },
+    "api_analysis": null,
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 23 code files. Findings:\n\u2022 RSA encryption detected\n\u2022 DES/3DES encryption detected\n\u2022 ECDSA signature detected\n\u2022 X25519 key exchange detected\n\u2022 AES encryption detected\n\u2022 SHA hash function detected\n\u2022 Crypto library usage detected\n\u2022 MD5 hash (weak!) detected\n\u2022 ChaCha20 encryption detected\n\u2022 Curve25519 detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 21:05:23",
+    "target": {
+        "domain": "github.com",
+        "repository": "/Users/rohit/Downloads/code"
+    },
+    "risk_score": 40,
+    "tls_analysis": {
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange": "NOT DETECTED",
+        "signature": "NOT DETECTED",
+        "quantum_safe": false
+    },
+    "api_analysis": null,
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 23 code files. Findings:\n\u2022 DES/3DES encryption detected\n\u2022 RSA encryption detected\n\u2022 ECDSA signature detected\n\u2022 X25519 key exchange detected\n\u2022 AES encryption detected\n\u2022 SHA hash function detected\n\u2022 Crypto library usage detected\n\u2022 MD5 hash (weak!) detected\n\u2022 ChaCha20 encryption detected\n\u2022 Curve25519 detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 21:05:47",
+    "target": {
+        "domain": "google.com",
+        "repository": "/Users/rohit/Downloads/code"
+    },
+    "risk_score": 40,
+    "tls_analysis": {
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange": "NOT DETECTED",
+        "signature": "NOT DETECTED",
+        "quantum_safe": false
+    },
+    "api_analysis": null,
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 23 code files. Findings:\n\u2022 DES/3DES encryption detected\n\u2022 RSA encryption detected\n\u2022 ECDSA signature detected\n\u2022 X25519 key exchange detected\n\u2022 AES encryption detected\n\u2022 SHA hash function detected\n\u2022 Crypto library usage detected\n\u2022 MD5 hash (weak!) detected\n\u2022 ChaCha20 encryption detected\n\u2022 Curve25519 detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+
+{
+    "scan_time": "2026-03-15 21:06:50",
+    "target": {
+        "domain": "localhost",
+        "repository": "browser"
+    },
+    "risk_score": 0,
+    "tls_analysis": {
+        "tls_version": "SCAN FAILED",
+        "cipher": "SCAN FAILED",
+        "key_exchange": "SCAN FAILED",
+        "signature": "SCAN FAILED",
+        "quantum_safe": false
+    },
+    "api_analysis": null,
+    "dependency_scan": "No cryptographic dependencies detected in requirement files.",
+    "crypto_scan": "Scanned 37 code files. Findings:\n\u2022 DES/3DES encryption detected",
+    "pqc_recommendation": "",
+    "quantum_label": "UNKNOWN"
+}
+

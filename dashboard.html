@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quantum-Safe Banking Security Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #330066 50%, #1a0033 100%);
+            color: #e0e0e0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-section {
+            background: rgba(30, 30, 60, 0.95);
+            border: 2px solid #ff6600;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+        }
+
+        .form-section h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            color: #ffaa33;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(20, 20, 40, 0.8);
+            border: 2px solid #ff6600;
+            border-radius: 5px;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="url"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6600, #ff8833);
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.8);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: rgba(100, 100, 150, 0.8);
+            color: #e0e0e0;
+            border: 2px solid #6496ff;
+        }
+
+        .btn-secondary:hover {
+            transform: scale(1.05);
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 102, 0, 0.3);
+            border-radius: 50%;
+            border-top-color: #ff6600;
+            animation: spin 0.8s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .scan-status {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            display: none;
+        }
+
+        .scan-status.show {
+            display: block;
+        }
+
+        .scan-status.running {
+            background: rgba(100, 150, 255, 0.2);
+            border: 2px solid #6496ff;
+            color: #88ccff;
+        }
+
+        .scan-status.success {
+            background: rgba(68, 255, 68, 0.2);
+            border: 2px solid #44ff44;
+            color: #88ff88;
+        }
+
+        .scan-status.error {
+            background: rgba(255, 68, 68, 0.2);
+            border: 2px solid #ff4444;
+            color: #ff8888;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(30, 30, 60, 0.9);
+            border: 2px solid #ff6600;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.5);
+        }
+
+        .card h2 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #ffaa33;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 102, 0, 0.2);
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #ffaa33;
+        }
+
+        .info-value {
+            color: #e0e0e0;
+            word-break: break-all;
+        }
+
+        .risk-score {
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .risk-high {
+            color: #ff4444;
+            text-shadow: 0 0 10px rgba(255, 68, 68, 0.8);
+        }
+
+        .risk-medium {
+            color: #ffaa00;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.8);
+        }
+
+        .risk-low {
+            color: #44ff44;
+            text-shadow: 0 0 10px rgba(68, 255, 68, 0.8);
+        }
+
+        .label {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        .quantum-safe {
+            background: #1a6b1a;
+            color: #44ff44;
+            border: 2px solid #44ff44;
+        }
+
+        .quantum-unsafe {
+            background: #6b1a1a;
+            color: #ff4444;
+            border: 2px solid #ff4444;
+        }
+
+        .quantum-unknown {
+            background: #6b5a1a;
+            color: #ffaa00;
+            border: 2px solid #ffaa00;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        table th {
+            background: rgba(255, 102, 0, 0.2);
+            color: #ffd700;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ff6600;
+        }
+
+        table td {
+            padding: 10px;
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            color: #e0e0e0;
+        }
+
+        table tr:hover {
+            background: rgba(255, 102, 0, 0.1);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+
+        .chart-container.full {
+            grid-column: 1 / -1;
+        }
+
+        canvas {
+            max-height: 300px;
+        }
+
+        .loading {
+            text-align: center;
+            color: #ffd700;
+            font-size: 1.2em;
+        }
+
+        .error {
+            background: rgba(255, 68, 68, 0.2);
+            border: 2px solid #ff4444;
+            color: #ff8888;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .success {
+            background: rgba(68, 255, 68, 0.2);
+            border: 2px solid #44ff44;
+            color: #88ff88;
+        }
+
+        .asset-badge {
+            display: inline-block;
+            background: rgba(255, 102, 0, 0.3);
+            color: #ffaa33;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+
+        .recommendation {
+            background: rgba(100, 150, 255, 0.1);
+            border-left: 4px solid #6496ff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .scan-history {
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Quantum-Safe Banking Security</h1>
+            <p>Cryptographic Inventory & PQC Readiness Dashboard</p>
+        </header>
+
+        <!-- Scan Input Form -->
+        <div class="form-section">
+            <h2>New Security Scan</h2>
+            <form id="scanForm">
+                <div class="form-group">
+                    <div>
+                        <label for="domain">Domain to Audit</label>
+                        <input type="text" id="domain" name="domain" placeholder="e.g., google.com">
+                    </div>
+                    <div>
+                        <label for="repoPath">Repository Path or URL</label>
+                        <input type="text" id="repoPath" name="repoPath" placeholder="e.g., /path/to/repo or https://github.com/user/repo">
+                    </div>
+                    <div>
+                        <label for="apiEndpoint">API Endpoint</label>
+                        <input type="url" id="apiEndpoint" name="apiEndpoint" placeholder="e.g., https://api.example.com">
+                    </div>
+                </div>
+                <div class="scan-status" id="scanStatus"></div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-primary" id="scanButton" disabled>Run Scan</button>
+                    <button type="reset" class="btn-secondary">Clear</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="loading" class="loading">Loading scan data...</div>
+
+        <div id="content" style="display: none;">
+            <!-- Latest Scan Overview -->
+            <div class="grid">
+                <!-- Target Information -->
+                <div class="card">
+                    <h2>Target</h2>
+                    <div class="info-row">
+                        <span class="info-label">Domain:</span>
+                        <span class="info-value" id="scanDomain">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Repository:</span>
+                        <span class="info-value" id="repository">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Scan Time:</span>
+                        <span class="info-value" id="scanTime">-</span>
+                    </div>
+                </div>
+
+                <!-- Risk Score Card -->
+                <div class="card">
+                    <h2>Quantum Risk Score</h2>
+                    <div id="riskScoreContainer">
+                        <div class="risk-score risk-high" id="riskScore">-</div>
+                        <p style="text-align: center; margin-top: 10px;">Risk Level: <span id="riskLevel">-</span></p>
+                    </div>
+                </div>
+
+                <!-- Quantum Safety Label -->
+                <div class="card">
+                    <h2>Quantum Safety Status</h2>
+                    <div id="quantumLabel">-</div>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #aaa;">
+                        Compliance with NIST standards for quantum-safe cryptography
+                    </p>
+                </div>
+            </div>
+
+            <!-- TLS Analysis -->
+            <div class="grid">
+                <div class="card">
+                    <h2>TLS Analysis (Domain)</h2>
+                    <div id="tlsAnalysis">
+                        <p>No TLS data available</p>
+                    </div>
+                </div>
+
+                <div class="card" id="apiCard" style="display: none;">
+                    <h2>API TLS Analysis</h2>
+                    <div id="apiAnalysis">
+                        <p>No API data available</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Crypto Dependencies</h2>
+                    <div class="table-scroll">
+                        <table id="dependencyTable">
+                            <thead>
+                                <tr>
+                                    <th>Library</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td colspan="2">Loading dependencies...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CBOM - Cryptographic Inventory -->
+            <div class="grid">
+                <div class="card scan-history">
+                    <h2>Cryptographic Bill of Materials (CBOM)</h2>
+                    <div id="cbomInfo">
+                        <p>Loading CBOM data...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PQC Recommendations -->
+            <div class="grid">
+                <div class="card">
+                    <h2>PQC Recommendations</h2>
+                    <div id="pqcRecommendations">
+                        <p>Loading recommendations...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Crypto Code Analysis</h2>
+                    <div id="cryptoCodeAnalysis">
+                        <p>Loading analysis...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk Score Trends -->
+            <div class="grid">
+                <div class="card scan-history" style="grid-column: 1 / -1;">
+                    <h2>Risk Score Trends (Last 10 Scans)</h2>
+                    <div class="chart-container full">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cipher Analysis Chart -->
+            <div class="grid">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <h2>TLS Key Exchange & Signature Algorithms</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="chart-container">
+                            <canvas id="keyExchangeChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="signatureChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internet-Exposed Assets -->
+            <div class="grid">
+                <div class="card scan-history" style="grid-column: 1 / -1;">
+                    <h2>Internet-Exposed Crypto Assets</h2>
+                    <div id="exposedAssets">
+                        <p>Analyzing exposed assets...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorDiv" style="display: none;"></div>
+    </div>
+
+    <script>
+        let allScans = [];
+        let latestScan = null;
+
+        // Form submission handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const scanForm = document.getElementById('scanForm');
+            const domainInput = document.getElementById('domain');
+            const repoPathInput = document.getElementById('repoPath');
+            const apiEndpointInput = document.getElementById('apiEndpoint');
+            const scanButton = document.getElementById('scanButton');
+            
+            // Function to check if any input has value
+            function checkInputs() {
+                const domain = domainInput.value.trim();
+                const repo_path = repoPathInput.value.trim();
+                const api_endpoint = apiEndpointInput.value.trim();
+                
+                // Enable button if at least one field has input
+                const hasInput = domain || repo_path || api_endpoint;
+                scanButton.disabled = !hasInput;
+            }
+            
+            // Add event listeners to all inputs
+            domainInput.addEventListener('input', checkInputs);
+            repoPathInput.addEventListener('input', checkInputs);
+            apiEndpointInput.addEventListener('input', checkInputs);
+            
+            // Form submission
+            if (scanForm) {
+                scanForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const domain = domainInput.value.trim();
+                    const repo_path = repoPathInput.value.trim();
+                    const api_endpoint = apiEndpointInput.value.trim();
+                    
+                    // Show error if no inputs
+                    if (!domain && !repo_path && !api_endpoint) {
+                        showScanStatus('Please enter at least one value', 'error');
+                        return;
+                    }
+                    
+                    await runScan(domain, repo_path, api_endpoint);
+                });
+                
+                // Handle reset button to disable submit button
+                const resetButtons = scanForm.querySelectorAll('button[type="reset"]');
+                resetButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        setTimeout(() => {
+                            scanButton.disabled = true;
+                        }, 0);
+                    });
+                });
+            }
+            
+            // Initial load
+            loadData();
+        });
+
+        async function runScan(domain, repo_path, api_endpoint) {
+            const statusDiv = document.getElementById('scanStatus');
+            const scanButton = document.getElementById('scanButton');
+            
+            try {
+                // Show running status
+                statusDiv.className = 'scan-status show running';
+                statusDiv.innerHTML = '<span class="spinner"></span>Running scan... This may take 2-3 minutes.';
+                scanButton.disabled = true;
+                
+                // Call the backend endpoint with timeout
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 180000); // 3 minute timeout
+                
+                const response = await fetch('http://127.0.0.1:8000/run-scan', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        domain: domain,
+                        repo_path: repo_path,
+                        api_endpoint: api_endpoint || null
+                    }),
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                
+                let result;
+                try {
+                    result = await response.json();
+                } catch (e) {
+                    console.error('Failed to parse response:', e);
+                    throw new Error('Invalid response from server');
+                }
+                
+                if (response.ok && result.status === 'success') {
+                    statusDiv.className = 'scan-status show success';
+                    statusDiv.innerHTML = '✓ Scan completed successfully! Refreshing dashboard...';
+                    
+                    // Reload the scan data
+                    await loadData();
+                    
+                    // Clear form
+                    document.getElementById('scanForm').reset();
+                    scanButton.disabled = true; // Re-disable since fields are cleared
+                    
+                    // Hide status after 3 seconds
+                    setTimeout(() => {
+                        statusDiv.classList.remove('show');
+                    }, 3000);
+                } else if (!response.ok) {
+                    // HTTP error - extract detail from response
+                    const errorMsg = result.detail || result.message || JSON.stringify(result) || 'Unknown error occurred';
+                    showScanStatus(`Scan failed: ${typeof errorMsg === 'string' ? errorMsg : JSON.stringify(errorMsg)}`, 'error');
+                } else {
+                    // Status is "error" not "success"
+                    const errorMsg = (result.message || result.detail || 'Scan failed').toString();
+                    showScanStatus(`Scan failed: ${errorMsg}`, 'error');
+                }
+                
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    showScanStatus('Error: Scan timed out after 3 minutes', 'error');
+                } else {
+                    showScanStatus(`Error: ${error.message}`, 'error');
+                }
+                console.error('Scan error:', error);
+            } finally {
+                // Don't automatically enable - let the user clear and try again
+            }
+        }
+
+        function showScanStatus(message, status) {
+            const statusDiv = document.getElementById('scanStatus');
+            statusDiv.className = `scan-status show ${status}`;
+            statusDiv.innerHTML = message;
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch("http://127.0.0.1:8000/scans");
+                if (!response.ok) throw new Error("Failed to fetch scans");
+                
+                allScans = await response.json();
+                if (allScans.length === 0) {
+                    showError("No scan data available. Run a scan first.");
+                    return;
+                }
+
+                latestScan = allScans[allScans.length - 1];
+                displayDashboard();
+                displayTrends();
+                
+            } catch (error) {
+                showError(`Error loading data: ${error.message}`);
+                console.error(error);
+            }
+        }
+
+        function showError(message) {
+            document.getElementById("loading").style.display = "none";
+            const errorDiv = document.getElementById("errorDiv");
+            errorDiv.innerHTML = `<div class="error">${message}</div>`;
+            errorDiv.style.display = "block";
+        }
+
+        function displayDashboard() {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("content").style.display = "block";
+
+            // Target Information
+            document.getElementById("scanDomain").textContent = latestScan.target.domain || "-";
+            document.getElementById("repository").textContent = latestScan.target.repository || "-";
+            document.getElementById("scanTime").textContent = latestScan.scan_time || "-";
+
+            // Risk Score
+            const riskScore = latestScan.risk_score || 0;
+            document.getElementById("riskScore").textContent = riskScore;
+            document.getElementById("riskScore").className = "risk-score " + 
+                (riskScore >= 80 ? "risk-high" : riskScore >= 40 ? "risk-medium" : "risk-low");
+            
+            const riskLevel = riskScore >= 80 ? "HIGH" : riskScore >= 40 ? "MEDIUM" : "LOW";
+            document.getElementById("riskLevel").textContent = riskLevel;
+
+            // Quantum Label
+            const label = latestScan.quantum_label || "UNKNOWN";
+            let labelClass = label.includes("SAFE") ? "quantum-safe" : label.includes("NOT") ? "quantum-unsafe" : "quantum-unknown";
+            document.getElementById("quantumLabel").innerHTML = `<span class="label ${labelClass}">${label}</span>`;
+
+            // TLS Analysis
+            displayTLSAnalysis();
+
+            // API Analysis
+            if (latestScan.api_analysis) {
+                document.getElementById("apiCard").style.display = "block";
+                displayAPIAnalysis();
+            }
+
+            // Dependencies
+            displayDependencies();
+
+            // CBOM
+            displayCBOM();
+
+            // PQC Recommendations
+            displayPQCRecommendations();
+
+            // Crypto Code Analysis
+            displayCryptoCodeAnalysis();
+
+            // Key Exchange & Signature
+            displayKeyExchangeSignature();
+
+            // Exposed Assets
+            displayExposedAssets();
+        }
+
+        function displayTLSAnalysis() {
+            const tls = latestScan.tls_analysis || {};
+            let html = `
+                <div class="info-row">
+                    <span class="info-label">TLS Version:</span>
+                    <span class="info-value">${tls.tls_version || "-"}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Cipher:</span>
+                    <span class="info-value">${tls.cipher || "-"}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Key Exchange:</span>
+                    <span class="info-value">${tls.key_exchange || "-"}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Signature:</span>
+                    <span class="info-value">${tls.signature || "-"}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Quantum Safe:</span>
+                    <span class="info-value">${tls.quantum_safe ? "Yes" : "No"}</span>
+                </div>
+            `;
+            document.getElementById("tlsAnalysis").innerHTML = html;
+        }
+
+        function displayAPIAnalysis() {
+            const api = latestScan.api_analysis || {};
+            if (!api.domain) {
+                document.getElementById("apiAnalysis").innerHTML = "<p>No API data available</p>";
+                return;
+            }
+            let html = `
+                <div class="info-row">
+                    <span class="info-label">Domain:</span>
+                    <span class="info-value">${api.domain}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">TLS Version:</span>
+                    <span class="info-value">${api.tls_version || "-"}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Cipher:</span>
+                    <span class="info-value">${api.cipher || "-"}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Key Exchange:</span>
+                    <span class="info-value">${api.key_exchange || "-"}</span>
+                </div>
+            `;
+            document.getElementById("apiAnalysis").innerHTML = html;
+        }
+
+        function displayDependencies() {
+            const deps = latestScan.dependency_scan || "";
+            let lines = deps.split("\n").filter(l => l.trim());
+            let html = "";
+            
+            if (lines.length === 0) {
+                html = "<tr><td colspan='2'>No dependency data available</td></tr>";
+            } else {
+                lines.forEach(line => {
+                    html += `<tr><td>${line.substring(0, 60)}</td><td><span class="asset-badge">Detected</span></td></tr>`;
+                });
+            }
+            
+            document.querySelector("#dependencyTable tbody").innerHTML = html;
+        }
+
+        function displayCBOM() {
+            const cbomText = allScans.map((scan, idx) => {
+                return `<div class="recommendation">
+                    <strong>Scan ${idx + 1}:</strong> ${scan.target.domain} | 
+                    Risk: <span style="color: ${scan.risk_score >= 80 ? '#ff4444' : scan.risk_score >= 40 ? '#ffaa00' : '#44ff44'}">${scan.risk_score}/100</span> | 
+                    TLS: ${scan.tls_analysis?.tls_version || '-'} | 
+                    Status: <strong>${scan.quantum_label}</strong>
+                </div>`;
+            }).join("");
+            document.getElementById("cbomInfo").innerHTML = cbomText;
+        }
+
+        function displayPQCRecommendations() {
+            const pqc = latestScan.pqc_recommendation || "No recommendations available";
+            const lines = pqc.split("\n").filter(l => l.trim());
+            let html = lines.map(line => `<div class="recommendation">${line}</div>`).join("");
+            if (!html) html = "<p>No PQC recommendations available</p>";
+            document.getElementById("pqcRecommendations").innerHTML = html;
+        }
+
+        function displayCryptoCodeAnalysis() {
+            const crypto = latestScan.crypto_scan || "No analysis available";
+            const lines = crypto.split("\n").filter(l => l.trim()).slice(0, 5);
+            let html = lines.map(line => `<div class="recommendation">${line}</div>`).join("");
+            if (!html) html = "<p>No crypto code analysis available</p>";
+            document.getElementById("cryptoCodeAnalysis").innerHTML = html;
+        }
+
+        function displayKeyExchangeSignature() {
+            const keyEx = latestScan.tls_analysis?.key_exchange || "Unknown";
+            const sig = latestScan.tls_analysis?.signature || "Unknown";
+
+            // Key Exchange Chart
+            const keyExCtx = document.getElementById('keyExchangeChart').getContext('2d');
+            new Chart(keyExCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Detected Algorithm'],
+                    datasets: [{
+                        label: 'Key Exchange',
+                        data: [1],
+                        backgroundColor: ['#ff6600'],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#e0e0e0' }
+                        }
+                    }
+                }
+            });
+
+            // Signature Chart
+            const sigCtx = document.getElementById('signatureChart').getContext('2d');
+            new Chart(sigCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Detected Algorithm'],
+                    datasets: [{
+                        label: 'Signature',
+                        data: [1],
+                        backgroundColor: ['#ff6600'],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#e0e0e0' }
+                        }
+                    }
+                }
+            });
+
+            document.querySelector('#keyExchangeChart').title = keyEx;
+            document.querySelector('#signatureChart').title = sig;
+        }
+
+        function displayExposedAssets() {
+            const assets = [
+                latestScan.target.domain,
+                latestScan.api_analysis?.domain
+            ].filter(a => a);
+
+            let html = '<div class="table-scroll"><table><thead><tr><th>Asset</th><th>Type</th><th>Risk Level</th><th>Status</th></tr></thead><tbody>';
+            
+            assets.forEach((asset, idx) => {
+                const riskLevel = latestScan.risk_score >= 80 ? "HIGH" : latestScan.risk_score >= 40 ? "MEDIUM" : "LOW";
+                const riskColor = riskLevel === "HIGH" ? "#ff4444" : riskLevel === "MEDIUM" ? "#ffaa00" : "#44ff44";
+                html += `<tr>
+                    <td>${asset}</td>
+                    <td><span class="asset-badge">${idx === 0 ? "Domain" : "API"}</span></td>
+                    <td style="color: ${riskColor}; font-weight: bold;">${riskLevel}</td>
+                    <td>${latestScan.quantum_label}</td>
+                </tr>`;
+            });
+
+            html += '</tbody></table></div>';
+            document.getElementById("exposedAssets").innerHTML = html;
+        }
+
+        function displayTrends() {
+            const last10 = allScans.slice(-10);
+            const labels = last10.map((s, i) => `Scan ${i + 1}`);
+            const scores = last10.map(s => s.risk_score || 0);
+            const domains = last10.map(s => s.target.domain);
+
+            const ctx = document.getElementById('trendChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Risk Score Trend',
+                        data: scores,
+                        borderColor: '#ff6600',
+                        backgroundColor: 'rgba(255, 102, 0, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: scores.map(s => s >= 80 ? '#ff4444' : s >= 40 ? '#ffaa00' : '#44ff44'),
+                        pointRadius: 6,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            max: 100,
+                            min: 0,
+                            ticks: { color: '#e0e0e0' },
+                            grid: { color: 'rgba(255, 102, 0, 0.1)' }
+                        },
+                        x: {
+                            ticks: { color: '#e0e0e0' },
+                            grid: { color: 'rgba(255, 102, 0, 0.1)' }
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#e0e0e0' } }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

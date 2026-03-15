@@ -1,0 +1,512 @@
+
+
+============================================
+SCAN TIME: 2026-03-11 21:43:54
+============================================
+{
+    "scan_time": "2026-03-11 21:43:54",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "pnbindia.in",
+            "tls_version": "TLS 1.3",
+            "cipher": "Unknown",
+            "key_exchange": "X25519",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "repository": "CheatSheetSeries"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://api.github.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "CheatSheetSeries"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-11 21:58:01
+============================================
+{
+    "scan_time": "2026-03-11 21:58:01",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLS 1.3",
+            "cipher": "Unknown",
+            "key_exchange": "X25519",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "repository": "notebooks"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://critical-hitters-ai-seller-dashboard.netlify.app/",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "notebooks"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-11 22:01:56
+============================================
+{
+    "scan_time": "2026-03-11 22:01:56",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "github.com",
+            "tls_version": "TLS 1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "X25519",
+            "signature": "ECDSA-SHA256",
+            "quantum_safe": false,
+            "repository": "notebooks"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://critical-hitters-ai-seller-dashboard.netlify.app/",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "notebooks"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-11 22:20:11
+============================================
+{
+    "scan_time": "2026-03-11 22:20:11",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLS 1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "X25519",
+            "signature": "ECDSA-SHA256",
+            "quantum_safe": false,
+            "repository": "notebooks"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://critical-hitters-ai-seller-dashboard.netlify.app/",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "notebooks"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-11 22:23:22
+============================================
+{
+    "scan_time": "2026-03-11 22:23:22",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLS 1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "X25519",
+            "signature": "ECDSA-SHA256",
+            "quantum_safe": false,
+            "repository": "notebooks"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://critical-hitters-ai-seller-dashboard.netlify.app/",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "notebooks"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-12 09:47:19
+============================================
+{
+    "scan_time": "2026-03-12 09:47:19",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLS 1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "X25519",
+            "signature": "ECDSA-SHA256",
+            "quantum_safe": false,
+            "repository": "notebooks"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://ai-marketplace-backend-e3en.onrender.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": "Request failed",
+            "repository": "notebooks"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-12 09:50:34
+============================================
+{
+    "scan_time": "2026-03-12 09:50:34",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLS 1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "X25519",
+            "signature": "ECDSA-SHA256",
+            "quantum_safe": false,
+            "repository": "notebooks"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://ai-marketplace-backend-e3en.onrender.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "notebooks"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 19:24:06
+============================================
+{
+    "scan_time": "2026-03-15 19:24:06",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "SCAN FAILED",
+            "cipher": "SCAN FAILED",
+            "key_exchange": "SCAN FAILED",
+            "signature": "SCAN FAILED",
+            "quantum_safe": false,
+            "repository": ""
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 20:21:23
+============================================
+{
+    "scan_time": "2026-03-15 20:21:23",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "SCAN FAILED",
+            "cipher": "SCAN FAILED",
+            "key_exchange": "SCAN FAILED",
+            "signature": "SCAN FAILED",
+            "quantum_safe": false,
+            "repository": "repo"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://api.example.com",
+            "tls_version": null,
+            "cipher": null,
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": null,
+            "repository": "repo"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 20:24:26
+============================================
+{
+    "scan_time": "2026-03-15 20:24:26",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "NOT DETECTED",
+            "signature": "NOT DETECTED",
+            "quantum_safe": false,
+            "repository": "browser"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://www.google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "browser"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 20:30:12
+============================================
+{
+    "scan_time": "2026-03-15 20:30:12",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "NOT DETECTED",
+            "signature": "NOT DETECTED",
+            "quantum_safe": false,
+            "repository": "browser"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://www.google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "browser"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 20:45:07
+============================================
+{
+    "scan_time": "2026-03-15 20:45:07",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "NOT DETECTED",
+            "signature": "NOT DETECTED",
+            "quantum_safe": false,
+            "repository": "browser"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://www.google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "browser"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 20:55:20
+============================================
+{
+    "scan_time": "2026-03-15 20:55:20",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "yahoo.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "NOT DETECTED",
+            "signature": "NOT DETECTED",
+            "quantum_safe": false,
+            "repository": "/Users/rohit/Downloads/code"
+        },
+        {
+            "asset_type": "api",
+            "domain": "https://google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "Unknown",
+            "signature": "Unknown",
+            "quantum_safe": false,
+            "status_code": 200,
+            "repository": "/Users/rohit/Downloads/code"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 20:56:13
+============================================
+{
+    "scan_time": "2026-03-15 20:56:13",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "NOT DETECTED",
+            "signature": "NOT DETECTED",
+            "quantum_safe": false,
+            "repository": "/Users/rohit/Downloads/code"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 20:56:23
+============================================
+{
+    "scan_time": "2026-03-15 20:56:23",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "NOT DETECTED",
+            "signature": "NOT DETECTED",
+            "quantum_safe": false,
+            "repository": "/Users/rohit/Downloads/code"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 21:02:36
+============================================
+{
+    "scan_time": "2026-03-15 21:02:36",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "NOT DETECTED",
+            "signature": "NOT DETECTED",
+            "quantum_safe": false,
+            "repository": "/Users/rohit/Downloads/code"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 21:05:23
+============================================
+{
+    "scan_time": "2026-03-15 21:05:23",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "github.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_128_GCM_SHA256",
+            "key_exchange": "NOT DETECTED",
+            "signature": "NOT DETECTED",
+            "quantum_safe": false,
+            "repository": "/Users/rohit/Downloads/code"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 21:05:47
+============================================
+{
+    "scan_time": "2026-03-15 21:05:47",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "google.com",
+            "tls_version": "TLSv1.3",
+            "cipher": "TLS_AES_256_GCM_SHA384",
+            "key_exchange": "NOT DETECTED",
+            "signature": "NOT DETECTED",
+            "quantum_safe": false,
+            "repository": "/Users/rohit/Downloads/code"
+        }
+    ]
+}
+
+
+============================================
+SCAN TIME: 2026-03-15 21:06:50
+============================================
+{
+    "scan_time": "2026-03-15 21:06:50",
+    "assets": [
+        {
+            "asset_type": "domain",
+            "domain": "localhost",
+            "tls_version": "SCAN FAILED",
+            "cipher": "SCAN FAILED",
+            "key_exchange": "SCAN FAILED",
+            "signature": "SCAN FAILED",
+            "quantum_safe": false,
+            "repository": "browser"
+        }
+    ]
+}
